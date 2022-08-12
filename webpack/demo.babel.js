@@ -34,7 +34,7 @@
          name: "[name]",
          export: "default",
        },
-       publicPath: "/",
+       publicPath: "/tea-swagger-ui",
      },
  
      module: {
