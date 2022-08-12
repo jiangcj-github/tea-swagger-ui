@@ -309,25 +309,4 @@ const RequestBody = ({
   </div>
 }
 
-RequestBody.propTypes = {
-  userHasEditedBody: PropTypes.bool.isRequired,
-  requestBody: ImPropTypes.orderedMap.isRequired,
-  requestBodyValue: ImPropTypes.orderedMap.isRequired,
-  requestBodyInclusionSetting: ImPropTypes.Map.isRequired,
-  requestBodyErrors: ImPropTypes.list.isRequired,
-  getComponent: PropTypes.func.isRequired,
-  getConfigs: PropTypes.func.isRequired,
-  fn: PropTypes.object.isRequired,
-  specSelectors: PropTypes.object.isRequired,
-  contentType: PropTypes.string,
-  isExecute: PropTypes.bool.isRequired,
-  onChange: PropTypes.func.isRequired,
-  onChangeIncludeEmpty: PropTypes.func.isRequired,
-  specPath: PropTypes.array.isRequired,
-  activeExamplesKey: PropTypes.string,
-  updateActiveExamplesKey: PropTypes.func,
-  setRetainRequestBodyValueFlag: PropTypes.func,
-  oas3Actions: PropTypes.object.isRequired
-}
-
 export default RequestBody

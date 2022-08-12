@@ -13,7 +13,7 @@ import pkg from "../package.json"
 
 const projectBasePath = path.join(__dirname, "../")
 
-const baseRules = [
+export const baseRules = [
   {
     test: /\.jsx?$/,
     include: [
@@ -83,7 +83,6 @@ export default function buildConfig(
 
       target: "web",
 
-
       module: {
         rules: baseRules,
       },
@@ -124,9 +123,9 @@ export default function buildConfig(
         : false,
 
       performance: {
-        hints: "error",
-        maxEntrypointSize: 1153434,
-        maxAssetSize: 1153434,
+        // hints: "error",
+        // maxEntrypointSize: 1153434,
+        // maxAssetSize: 1153434,
       },
 
       optimization: {

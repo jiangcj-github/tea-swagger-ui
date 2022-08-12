@@ -18,7 +18,7 @@
     minimize: true,
     mangle: true,
     sourcemaps: true,
-    includeDependencies: false,
+    includeDependencies: true,
    },
    {
      entry: {
@@ -30,11 +30,7 @@
      output: {
        filename: "[name].js",
        chunkFilename: "[id].js",
-       library: {
-         name: "[name]",
-         export: "default",
-       },
-       publicPath: "/tea-swagger-ui",
+       publicPath: "./",
      },
  
      module: {
@@ -48,10 +44,27 @@
            ],
            loader: "babel-loader",
            options: {
-             retainLines: true,
-             cacheDirectory: true,
-             plugins: [isDevelopment && require.resolve("react-refresh/babel")].filter(Boolean),
-           },
+             presets: [
+              '@babel/preset-env', 
+              '@babel/preset-react'
+            ],
+             plugins: [
+                ["babel-plugin-module-resolver", {
+                  "alias": {
+                    "root": ".",
+                    "components": "./src/core/components",
+                    "containers": "./src/core/containers",
+                    "core": "./src/core",
+                    "plugins": "./src/plugins",
+                    "img": "./src/img",
+                    "corePlugins": "./src/core/plugins",
+                    "less": "./src/less"
+                  }
+                }],
+                "@babel/plugin-transform-runtime",
+             ],
+             configFile: false,
+           }
          },
          {
            test: /\.(txt|yaml)$/,
