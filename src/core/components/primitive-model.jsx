@@ -52,15 +52,15 @@ export default class Primitive extends Component {
           {format && <span className="prop-format">(${format})</span>}
           {
             properties.size ? properties.entrySeq().map(([key, v]) => 
-              <div>
-                <Property key={`${key}-${v}`} propKey={key} propVal={v} propClass={propClass} />
+              <div key={`${key}-${v}`}>
+                <Property propKey={key} propVal={v} propClass={propClass} />
               </div>
               ) : null
           }
           {
             showExtensions && extensions.size ? extensions.entrySeq().map(([key, v]) => 
-              <div>
-                <Property key={`${key}-${v}`} propKey={key} propVal={v} propClass={propClass} />
+              <div key={`${key}-${v}`}>
+                <Property propKey={key} propVal={v} propClass={propClass} />
               </div>) : null
           }
           {
@@ -73,7 +73,8 @@ export default class Primitive extends Component {
             xml && xml.size ? (<span>
               <span className={propClass}>xml:</span>
               {
-                xml.entrySeq().map(([key, v]) => <span key={`${key}-${v}`} className={propClass}><br />&nbsp;&nbsp;&nbsp;{key}: {String(v)}</span>).toArray()
+                xml.entrySeq().map(([key, v]) => 
+                  <span key={`${key}-${v}`} className={propClass}><br />&nbsp;&nbsp;&nbsp;{key}: {String(v)}</span>).toArray()
               }
             </span>) : null
           }

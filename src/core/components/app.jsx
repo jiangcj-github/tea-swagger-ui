@@ -1,6 +1,4 @@
 import React from "react"
-import { Layout } from "@tencent/tea-component";
-const { Body, Content } = Layout;
 
 export default class App extends React.Component {
 
@@ -14,16 +12,9 @@ export default class App extends React.Component {
   render() {
     const Inner = this.getLayout()
     return (
-      <Layout>
-        <Body>
-          <Content>
-            <Content.Header title="Tea Swagger UI" />
-            <Content.Body>
-              <Inner />
-            </Content.Body>
-          </Content>
-        </Body>
-      </Layout>
+      <div className="tsu-inner">
+        <Inner />   
+      </div>
     )
   }
 }

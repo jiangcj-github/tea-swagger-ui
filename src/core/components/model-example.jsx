@@ -67,7 +67,7 @@ export default class ModelExample extends React.Component {
     let isOAS3 = specSelectors.isOAS3()
 
     return (
-      <div>
+      <div style={{marginTop: "12px"}}>
         <Segment 
           rimless={true}
           value={this.state.activeTab}

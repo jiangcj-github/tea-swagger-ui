@@ -88,7 +88,7 @@ export default class RequestBodyEditor extends PureComponent {
     // const TextArea = getComponent("TextArea")
 
     return (
-      <div className="body-param">
+      <div className="body-param" style={{marginTop: "12px"}}>
         <Input.TextArea
           className={cx("body-param__text", { invalid: isInvalid } )}
           title={errors.size ? errors.join(", ") : ""}

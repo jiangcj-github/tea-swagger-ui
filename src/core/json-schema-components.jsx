@@ -6,7 +6,7 @@ import ImPropTypes from "react-immutable-proptypes"
 import DebounceInput from "react-debounce-input"
 import { stringify, getSampleSchema } from "core/utils"
 //import "less/json-schema-form"
-import { Button, Input } from "@tencent/tea-component";
+import { Button, Input, Select } from "@tencent/tea-component";
 import { classPrefix } from "core/utils/prefix";
 
 const noop = ()=> {}

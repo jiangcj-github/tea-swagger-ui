@@ -118,7 +118,7 @@ export default class ObjectModel extends Component {
                         (!value.get("writeOnly") || includeWriteOnly)
                     }
                 ).map(
-                    ([key, value]) => {
+                    ([key, value], idx) => {
                       let isDeprecated = isOAS3() && value.get("deprecated")
                       let isRequired = List.isList(requiredProperties) && requiredProperties.contains(key)
 
@@ -132,7 +132,7 @@ export default class ObjectModel extends Component {
                         classNames.push("required")
                       }
 
-                      return (<tr key={key} className={classNames.join(" ")}>
+                      return (<tr key={idx} className={classNames.join(" ")}>
                         <td>
                           { key }{ isRequired && <span className="star">*</span> }
                         </td>
@@ -241,7 +241,8 @@ export default class ObjectModel extends Component {
         <span className="brace-close">{ braceClose }</span>
       </ModelCollapse>
       {
-        infoProperties.size ? infoProperties.entrySeq().map( ( [ key, v ] ) => <Property key={`${key}-${v}`} propKey={ key } propVal={ v } propClass={ propClass } />) : null
+        infoProperties.size ? infoProperties.entrySeq().map( ( [ key, v ], idx ) => 
+          <Property key={idx} propKey={ key } propVal={ v } propClass={ propClass } />) : null
       }
     </span>
   }

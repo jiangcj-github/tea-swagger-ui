@@ -467,7 +467,7 @@ export function consumesOptionsFor(state, pathMethod) {
 
 export const operationScheme = ( state, path, method ) => {
   let url = state.get("url")
-  let matchResult = url.match(/^([a-z][a-z0-9+\-.]*):/)
+  let matchResult = url?.match(/^([a-z][a-z0-9+\-.]*):/)
   let urlScheme = Array.isArray(matchResult) ? matchResult[1] : null
 
   return state.getIn(["scheme", path, method]) || state.getIn(["scheme", "_defaultScheme"]) || urlScheme || ""

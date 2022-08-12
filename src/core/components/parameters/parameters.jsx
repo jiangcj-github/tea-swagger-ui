@@ -149,7 +149,8 @@ export default class Parameters extends Component {
                       this.onChangeMediaType({ value, pathMethod })
                     }}
                     className="body-param-content-type" 
-                    ariaLabel="Request content type" 
+                    ariaLabel="Request content type"
+                    style={{marginBottom: "12px"}}
                   />
                   <RequestBody
                     setRetainRequestBodyValueFlag={retainRequestBodyValueFlagForOperation}
