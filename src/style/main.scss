@@ -1,0 +1,132 @@
+.swagger-ui
+{
+    @import '~tachyons-sass/tachyons.scss';
+    @import 'mixins';
+    @import 'variables';
+    @import 'type';
+    @import 'layout';
+    @import 'buttons';
+    @import 'form';
+    @import 'modal';
+    @import 'models';
+    @import 'servers';
+    @import 'table';
+    @import 'topbar';
+    @import 'information';
+    @import 'authorize';
+    @import 'errors';
+    @include text_body();
+    @import 'split-pane-mode';
+    @import 'markdown';
+}
+
+.form-line-20 {
+    .tea-form__item {
+       line-height: 24px;
+    }
+    .tea-form-check.tea-form-check--block {
+        height: 24px;
+        margin: 0;
+        & + .tea-form-check {
+            margin-top: 4px;
+        }
+        .tea-checkbox {
+            top: 4px;
+        }
+    }
+}
+
+.auth-container + .auth-container {
+    border-top: 1px solid #e7eaef;
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+.operation-collapse {
+    background: rgba(222, 222, 222, 0.2);
+    margin-bottom: 12px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+}
+
+.tsw-modal-wrapper {
+    padding: 6px;
+    background: rgb(51, 51, 51);
+    color: #fff;
+    font-family: monospace;
+    tr {
+        line-height: 20px;
+        vertical-align: top;
+        
+    }
+    td {
+        padding: 0 8px;
+        font-size: 14px !important;
+        &:first-of-type {
+            padding-left: 20px;
+        }
+    }
+    .pointer {
+        margin-right: 8px;
+    }
+}
+
+.response-tb {
+    border: 1px solid #ccc;
+    width: 100%;
+    border-bottom: 0;
+    border-right: 0;
+    margin-top: 20px;
+    tr.res-tb-tr {
+        border-bottom: 1px solid #ccc;
+        >th {
+            background: #ebe6e6;
+        }
+        >th, >td {
+            padding: 12px;
+            text-align: left;
+            border-right: 1px solid #ccc;
+        }
+    }
+}
+
+.tsu-table {
+    border: 1px solid #ccc;
+    border-bottom: 0;
+    border-right: 0;
+    width: 100%;
+    tr {
+        border-bottom: 1px solid #ccc;
+    }
+    th,td {
+        padding: 8px 12px;
+        border-right: 1px solid #ccc;
+    }
+}
+
+.invalid {
+    &.tea-input {
+        border-color: #e54545 !important;
+    }
+    &.tea-dropdown {
+        .tea-dropdown__header {
+            border-color: #e54545 !important;
+        }
+    }
+}
+
+.model {
+    .prop-type {
+        color: rgb(122, 122, 195);
+    }
+    .prop-format {
+        color: rgb(160, 160, 107)
+    }
+    .prop-desc {
+        color: #917070;
+    }
+    .inner-object .model-title {
+        font-style: italic;
+        color: #6cda6c;
+    }
+}
